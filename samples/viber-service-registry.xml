@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="KOI8-R"?>
+<resource id="viber-service-registry" order="21">
+    <factory class="com.eyelinecom.whoisd.sads2.viber.registry.ViberServiceRegistry$Factory" />
+    <properties>
+    </properties>
+    <config>
+        <resource id="viber-api" />
+    </config>
+</resource>

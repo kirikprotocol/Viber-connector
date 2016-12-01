@@ -1,0 +1,14 @@
+{
+    "event": "message",
+    "message": {
+        "media": "http://content.cdn.viber.com/stickers/100/40100/00040146.png",
+        "type": "sticker"
+    },
+    "message_token": MESSAGE_TOKEN,
+    "sender": {
+        "avatar": "PICTURE_URL",
+        "id": "B97ZnbvEiCGiMVv6jFM0DA==",
+        "name": "Boris Bondarev"
+    },
+    "timestamp": 1479974177364
+}

@@ -1,0 +1,14 @@
+{
+    "event": "message",
+    "message": {
+        "text": "\u0429\u0443\u0447",
+        "type": "text"
+    },
+    "message_token": MESSAGE_TOKEN,
+    "sender": {
+        "avatar": "https://share.viber.com/download_photo?dlid=0-03-05-9f50a40a37af1ae582e20b7f38c852b413ab433b49a1e465bfc65e600ea74660%26fltp=jpg%26imsz=0000",
+        "id": "B97ZnbvEiCGiMVv6jFM0DA==",
+        "name": "Boris Bondarev"
+    },
+    "timestamp": 1479721480068
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="KOI8-R"?>
+
+<service id="default">
+
+	<adaptor>
+		<adaptor name="xslt-viber" protocol="viber">
+			<class>com.eyelinecom.whoisd.sads2.adaptor.XSLTAdaptor</class>
+			<property name="xsl_url" value="sads2-viber.xsl"/>
+		</adaptor>
+	</adaptors>
+
+	<interceptors>
+	
+	    <interceptor protocol="viber">
+	      <class>com.eyelinecom.whoisd.sads2.viber.interceptors.ViberAttachmentPushInterceptor</class>
+	      <resource id="session-manager" tag="session-manager"/>
+	      <resource id="viber-api" tag="client"/>
+	      <resource id="http-loader" tag="loader"/>
+	    </interceptor>
+
+	    <interceptor protocol="viber">
+	      <class>com.eyelinecom.whoisd.sads2.viber.interceptors.ViberPushInterceptor</class>
+	      <resource id="session-manager" tag="session-manager"/>
+	      <resource id="viber-api" tag="client"/>
+	    </interceptor>
+
+	</interceptors>
+	
+</service>
+		

@@ -1,0 +1,14 @@
+{
+    "event": "message",
+    "message": {
+        "media": "MEDIA_URL",
+        "type": "video"
+    },
+    "message_token": MESSAGE_TOKEN,
+    "sender": {
+        "avatar": "PICTURE_URL",
+        "id": "B97ZnbvEiCGiMVv6jFM0DA==",
+        "name": "Boris Bondarev"
+    },
+    "timestamp": 1479974318893
+}

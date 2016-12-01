@@ -1,0 +1,14 @@
+{
+    "event": "message",
+    "message": {
+        "media": "https://dl-media.viber.com/5/media/2/short/any/def/file/0x0/9634/6a6c8a195a485b769fcf916c5574c5514b70ad040cc75dd0f8173597d23a9634?Expires=1479725646&Signature=vzzu~DRS2M9M5M89ihn1VHbjQnSMak61j3EGCD7CZAmgq2k6DHcKg5JTcM0twbqFkJyD4AZBmWVkVwivyshPBBFcbOr4~DhTLeM4UDI7VvcyZYCJV3uNK7g895NMDmd1wLV5T793cV6dhngKcgVl09D4nRjrgQ~vAYMygL9SkTs3NJoO1QK20GQ9wot1kVnY1cJ9UvGbI7QzsLv3LAEHuuQbpRAn5jcnVChHqoFuouezfkqS0jWeZG6XChnBUx79zvgXZBD9gUzE0Ees6AMf1UHsjk5ZbC77qKcJdjKJ3zfznHcgBxV2T-1CG9N-gL50TymIEvUFkRfn7VvHX9F6dw__&Key-Pair-Id=APKAJ62UNSBCMEIPV4HA",
+        "type": "file"
+    },
+    "message_token": ***REMOVED***,
+    "sender": {
+        "avatar": "https://share.viber.com/download_photo?dlid=0-03-05-9f50a40a37af1ae582e20b7f38c852b413ab433b49a1e465bfc65e600ea74660%26fltp=jpg%26imsz=0000",
+        "id": "B97ZnbvEiCGiMVv6jFM0DA==",
+        "name": "Boris Bondarev"
+    },
+    "timestamp": 1479722047118
+}

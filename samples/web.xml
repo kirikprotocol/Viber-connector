@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+
+
+  <servlet>
+    <servlet-name>viberConnector</servlet-name>
+    <servlet-class>com.eyelinecom.whoisd.sads2.viber.connector.ViberMessageConnector</servlet-class>
+    <init-param>
+      <param-name>listener-thread-pool</param-name><param-value>executor-service-status</param-value>
+    </init-param>
+    <init-param>
+      <param-name>scheduler-thread-pool</param-name><param-value>executor-service-processing</param-value>
+    </init-param>
+    <init-param>
+      <param-name>thread-pool</param-name><param-value>executor-service-processing</param-value>
+    </init-param>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>viberConnector</servlet-name>
+    <url-pattern>/dbot/viber/*</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
+
+
+
+

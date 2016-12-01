@@ -1,0 +1,17 @@
+{
+    "event": "message",
+    "message": {
+        "location": {
+            "lat": 54.863205,
+            "lon": 83.09002
+        },
+        "type": "location"
+    },
+    "message_token": ***REMOVED***,
+    "sender": {
+        "avatar": "https://share.viber.com/download_photo?dlid=0-03-05-9f50a40a37af1ae582e20b7f38c852b413ab433b49a1e465bfc65e600ea74660%26fltp=jpg%26imsz=0000",
+        "id": "B97ZnbvEiCGiMVv6jFM0DA==",
+        "name": "Boris Bondarev"
+    },
+    "timestamp": 1479721871990
+}

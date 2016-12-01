@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="KOI8-R"?>
+<resource id="viber-api" order="20">
+    <factory class="com.eyelinecom.whoisd.sads2.viber.resource.ViberApiImpl$Factory" />
+    <properties>
+      <property name="connector.url" value="https://devel.globalussd.mobi/dbot/viber/"/>
+    </properties>
+    <config>
+        <resource id="http-loader" tag="loader"/>
+        <resource id="detailed-stat-logger"/>
+    </config>
+</resource>

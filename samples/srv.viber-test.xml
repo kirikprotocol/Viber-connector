@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service id="srv.viber-test">
+  <properties>
+    <property name="viber.token" value="451b17dd7fd4eeac-cd2f40c53889273d-d445341ddcd97ccf"/>
+  </properties>
+</service>
