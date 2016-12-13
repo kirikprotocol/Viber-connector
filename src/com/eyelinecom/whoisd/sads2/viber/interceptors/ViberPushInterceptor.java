@@ -14,6 +14,9 @@ import com.eyelinecom.whoisd.sads2.content.attributes.AttributeSet;
 import com.eyelinecom.whoisd.sads2.exception.InterceptionException;
 import com.eyelinecom.whoisd.sads2.executors.connector.SADSExecutor;
 import com.eyelinecom.whoisd.sads2.interceptor.BlankInterceptor;
+import com.eyelinecom.whoisd.sads2.viber.api.types.ViberButton;
+import com.eyelinecom.whoisd.sads2.viber.api.types.ViberKeyboard;
+import com.eyelinecom.whoisd.sads2.viber.api.types.ViberMessage;
 import com.eyelinecom.whoisd.sads2.viber.registry.ViberServiceRegistry;
 import com.eyelinecom.whoisd.sads2.viber.resource.ViberApi;
 import org.apache.commons.collections.IteratorUtils;
@@ -75,7 +78,7 @@ public class ViberPushInterceptor extends BlankInterceptor implements Initable {
         // TODO
       } else {
         final Document doc = (Document) response.getAttributes().get(PageBuilder.VALUE_DOCUMENT);
-        final String keyboard = getKeyboard(doc);
+        final ViberKeyboard keyboard = getKeyboard(doc);
 
         String text = getText(doc);
 
@@ -106,18 +109,26 @@ public class ViberPushInterceptor extends BlankInterceptor implements Initable {
 
         if (!isNothingToSend) {
 
-          String subscriber = request.getProfile().property("viber", "id").getValue();
-          client.sendMessage(text + ((keyboard == null) ? "" : "\n" + keyboard), subscriber, authToken);
+          String receiver = request.getProfile().property("viber", "id").getValue();
+
+          ViberMessage viberMessage = new ViberMessage();
+          viberMessage.setAuthToken(authToken);
+          viberMessage.setReceiver(receiver);
+          viberMessage.setType(ViberMessage.TYPE_TEXT);
+          viberMessage.setText(text);
+          viberMessage.setKeyboard(keyboard);
+          client.sendMessage(viberMessage);
         }
 
       }
     } catch (Exception e) {
+      log.error("error preparing message", e);
       throw new InterceptionException(e);
     }
 
   }
 
-  public static String getText(final Document doc) throws DocumentException {
+  private static String getText(final Document doc) throws DocumentException {
     final Collection<String> messages = new ArrayList<String>() {{
       //noinspection unchecked
       for (Element e : (List<Element>) doc.getRootElement().elements("message")) {
@@ -128,7 +139,7 @@ public class ViberPushInterceptor extends BlankInterceptor implements Initable {
     return StringUtils.join(messages, "\n").trim();
   }
 
-  public static String getContent(Element element) throws DocumentException {
+  private static String getContent(Element element) throws DocumentException {
     final StringBuilder buf = new StringBuilder();
 
     final Element messageElement = new SAXReader()
@@ -154,7 +165,7 @@ public class ViberPushInterceptor extends BlankInterceptor implements Initable {
     return buf.toString().trim();
   }
 
-  public static String getKeyboard(Document doc) {
+  private static ViberKeyboard getKeyboard(Document doc) {
 
     @SuppressWarnings("unchecked")
     final List<Element> buttons = (List<Element>) doc.getRootElement().elements("button");
@@ -162,14 +173,19 @@ public class ViberPushInterceptor extends BlankInterceptor implements Initable {
       return null;
     }
 
-    final StringBuilder buf = new StringBuilder();
-
+    final ViberKeyboard keyboard = new ViberKeyboard();
+    ViberButton[] viberButtons = new ViberButton[buttons.size()];
+    int i = 0;
     for (Element button : buttons) {
-      buf.append(button.attributeValue("index")).append("> ");
-      buf.append(button.getTextTrim()).append("\n");
+      ViberButton vb = new ViberButton();
+      String text = button.getTextTrim();
+      vb.setText(text);
+      vb.setActionBody(text);
+      viberButtons[i++] = vb;
     }
+    keyboard.setButtons(viberButtons);
 
-    return buf.toString();
+    return keyboard;
   }
 
 

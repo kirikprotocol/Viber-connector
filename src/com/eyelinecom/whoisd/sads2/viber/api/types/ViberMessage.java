@@ -45,6 +45,8 @@ public class ViberMessage {
   String media;
   @JsonProperty(value = "location")
   ViberLocation location;
+  @JsonProperty(value = "keyboard")
+  ViberKeyboard keyboard;
 
   public void setAuthToken(String authToken) {
     this.authToken = authToken;
@@ -93,4 +95,10 @@ public class ViberMessage {
   public ViberContact getContact() {
     return contact;
   }
+
+  public void setKeyboard(ViberKeyboard keyboard) {
+    this.keyboard = keyboard;
+  }
+
 }
+
