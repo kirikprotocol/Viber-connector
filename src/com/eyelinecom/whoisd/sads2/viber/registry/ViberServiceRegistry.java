@@ -102,7 +102,11 @@ public class ViberServiceRegistry extends ServiceConfigListener {
 
   public String getChatUrl(Properties properties) {
     String token = getAccessToken(properties);
-    return getChatUrl(client.getAccountInfo(token).getUri());
+    String uri = client.getAccountInfo(token).getUri();
+    if (uri == null) {
+      return null;
+    }
+    return getChatUrl(uri);
   }
 
   public static String getChatUrl(String uri) {
