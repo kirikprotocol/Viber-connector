@@ -137,4 +137,6 @@ public class ViberServiceRegistry extends ServiceConfigListener {
       this.token = token;
     }
   }
+
 }
+
