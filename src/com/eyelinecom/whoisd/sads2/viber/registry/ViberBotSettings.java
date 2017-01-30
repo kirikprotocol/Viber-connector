@@ -10,16 +10,16 @@ import java.util.regex.Pattern;
  * Time: 2:12
  
  */
-class ViberBotSettings {
+public class ViberBotSettings {
   private static final Pattern PATTERN = Pattern.compile("[0-9a-fA-F]{16}+\\-[0-9a-fA-F]{16}+\\-[0-9a-fA-F]{16}+");
 
-  final String accessToken; //451bbb6ccfd4eeaa-b12230c23889273f-d4a5333444d97dca
+  public final String accessToken; //451bbb6ccfd4eeaa-b12230c23889273f-d4a5333444d97dca
 
   private ViberBotSettings(String accessToken) {
     this.accessToken = accessToken;
   }
 
-  static ViberBotSettings get(String value) {
+  public static ViberBotSettings get(String value) {
     if (value == null) return null;
     Matcher m = PATTERN.matcher(value);
     if (!m.matches()) return null;

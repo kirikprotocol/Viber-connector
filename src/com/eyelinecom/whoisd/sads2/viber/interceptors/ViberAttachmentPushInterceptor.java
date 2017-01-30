@@ -36,17 +36,14 @@ public class ViberAttachmentPushInterceptor extends BlankInterceptor implements 
   private ViberApi client;
 
 
+
+  @Override
   public void afterResponseRender(SADSRequest request,
                                   ContentResponse content,
                                   SADSResponse response,
                                   RequestDispatcher dispatcher) throws InterceptionException {
     try {
-      if (isNotBlank(request.getParameters().get("sadsSmsMessage"))) {
-        sendAttachment(request, response);
-      } else {
-        // ?
-        sendAttachment(request, response);
-      }
+      sendAttachment(request, response);
     } catch (Exception e) {
       throw new InterceptionException(e);
     }
@@ -101,14 +98,13 @@ public class ViberAttachmentPushInterceptor extends BlankInterceptor implements 
       throw re;
     }
     try {
-      UrlUtils.merge(request.getResourceURI(), uri);
+      return UrlUtils.merge(request.getResourceURI(), uri);
     } catch (Exception e) {
       RuntimeException re =
           new RuntimeException("error merging relative media link for attachment");
       log.warn(re);
       throw re;
     }
-    return null;
   }
 
   @Override
