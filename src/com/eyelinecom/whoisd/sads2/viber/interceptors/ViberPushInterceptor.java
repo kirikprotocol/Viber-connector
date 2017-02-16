@@ -105,6 +105,8 @@ public class ViberPushInterceptor extends BlankInterceptor implements Initable {
           session.setAttribute(
             ATTR_SESSION_PREVIOUS_PAGE_URI,
             response.getAttributes().get(ContentRequestUtils.ATTR_REQUEST_URI));
+        } else {
+          session.removeAttribute(ATTR_SESSION_PREVIOUS_PAGE_URI);
         }
 
         if (!isNothingToSend) {
