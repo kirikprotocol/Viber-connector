@@ -310,4 +310,8 @@
     <orderEntry type="module" module-name="statistics" />
     <orderEntry type="module" module-name="profile-storage" />
   </component>
+  <component name="sonarModuleSettings">
+    <option name="localAnalysisScripName" value="&lt;PROJECT&gt;" />
+    <option name="serverName" value="&lt;PROJECT&gt;" />
+  </component>
 </module>
