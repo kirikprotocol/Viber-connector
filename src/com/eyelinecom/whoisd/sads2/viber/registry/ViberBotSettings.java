@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  
  */
 public class ViberBotSettings {
-  private static final Pattern PATTERN = Pattern.compile("[0-9a-fA-F]{16}+\\-[0-9a-fA-F]{16}+\\-[0-9a-fA-F]{16}+");
+  private static final Pattern PATTERN = Pattern.compile("[0-9a-fA-F]{10,16}+\\-[0-9a-fA-F]{10,16}+\\-[0-9a-fA-F]{10,16}+");
 
   public final String accessToken; //451bbb6ccfd4eeaa-b12230c23889273f-d4a5333444d97dca
 
